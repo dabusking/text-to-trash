@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head land="en">
+    <meta charset="UTF-8">
+    <script src="emojiConverter.js"></script>
+    <script language="JavaScript">
+      function convertToTrash() {
+          emojiConverter();
+        }
+    </script>
+  </head>
+  <body>
+    <h1 style="font-size: 100px">Text 2 Trash</h1>
+    <form>
+      <fieldset>
+        <legend>Input your message, and desired emojis</legend>
+          Message: <input type="text" name="message" id="message"></br>
+          Background: <input type="text" name="background" id="background"></br>
+          Foreground: <input type="text" name="foreground" id="foreground"></br>
+    </fieldset>
+      <input type="button" onclick="convertToTrash();" value="Convert to Trash">
+    </form>
+  </br>
+  </br>
+  Result:</br> <textarea id="result" rows="20" cols="100"></textarea></br>
+  <button onclick="copyToClipBoard()" id="copyResultsBtn">Copy To Clipboard</button>
+  </body>
+</html>
