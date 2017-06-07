@@ -1,9 +1,6 @@
 var fs = require('fs');
 var path = require('path');
 
-//Load the docx file as a binary
-// var content = fs.readFileSync(path.resolve(__dirname, 'lib.txt'), 'binary');
-
 const readline = require('readline');
 
 const rl = readline.createInterface({

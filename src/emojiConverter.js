@@ -39,15 +39,8 @@ function emojiConverter() {
     "0": ["1110", "1010", "1010", "1010", "1110"]
   };
 
-  // var string = process.argv[2];
   var string = document.getElementById("message").value;
-
-      // string = "help";
-
-  // var background = process.argv[3];
   var background = document.getElementById("background").value;
-
-  // var foreground = process.argv[4];
   var foreground = document.getElementById("foreground").value;
 
   var string = string.toUpperCase();
@@ -63,10 +56,7 @@ function emojiConverter() {
         stringAsArr.push(lib[char]);
     }
 
-
   }
-
-  // console.log(stringAsArr);
 
   var finalString = "";
   var  charLineMax = 5;
@@ -85,8 +75,6 @@ function emojiConverter() {
               }
           }
       }
-      //letter space
-      // finalString = finalString + background;
 
        finalString = finalString + "\n";
        document.getElementById('result').value = finalString;
@@ -95,18 +83,34 @@ function emojiConverter() {
   console.log(finalString);
 }
 
+
+//This function validates the message content with regex so it only takes in A-Z, a-z, and 0-9
+function validateMessage(value, message){
+  var isValid = /^[A-Za-z0-9 ]*[A-Za-z0-9][A-Za-z0-9]*$/.test(value);
+
+  if(isValid){
+    document.getElementById("errorMessage").style.display = "none";
+  }else {
+    document.getElementById("errorMessage").style.display = "inline";
+  }
+
+  return isValid;
+}
+
+
+//This function coppies the text from the results window to the user's clipboard for ease of use
 function copyToClipBoard()
   {
     var copyResultsBtn = document.getElementById('copyResultsBtn');
     copyResultsBtn.addEventListener('click', function(event) {
-  // Select the email link anchor text
+
     var results = document.getElementById('result');
     var range = document.createRange();
+
     range.selectNode(results);
     window.getSelection().addRange(range);
 
     try {
-      // Now that we've selected the anchor text, execute the copy command
       var successful = document.execCommand('copy');
       var msg = successful ? 'successful' : 'unsuccessful';
       console.log('Copy results command was ' + msg);
@@ -114,8 +118,6 @@ function copyToClipBoard()
       console.log('Oops, unable to copy');
     }
 
-    // Remove the selections - NOTE: Should use
-    // removeRange(range) when it is supported
     window.getSelection().removeAllRanges();
     });
   }

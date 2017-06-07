@@ -2,6 +2,7 @@
 <html>
   <head land="en">
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="emojiConverter.js"></script>
     <script language="JavaScript">
       function convertToTrash() {
@@ -10,15 +11,17 @@
     </script>
   </head>
   <body>
-    <h1 style="font-size: 100px">Text 2 Trash</h1>
+    <h1 id="title">Text 2 Trash<img align="center" src="texttotrashlogo.png" alt="Text To Trash Logo" height="100" width="100"></img></h1>
     <form>
       <fieldset>
-        <legend>Input your message, and desired emojis</legend>
-          Message: <input type="text" name="message" id="message"></br>
-          Background: <input type="text" name="background" id="background"></br>
-          Foreground: <input type="text" name="foreground" id="foreground"></br>
+        <legend>Input your message and desired emojis</legend>
+          <p><label for="message">Message:</label> <input type="text" placeholder="Your Message Here" name="message" id="message" onchange="validateMessage(this.value, 'errorMessage');"></p>
+          <p><label for="background">Background:</label> <input type="text" placeholder="Example  :100:" name="background" id="background"></p>
+          <p><label for="foreground">Foreground:</label> <input type="text" placeholder="Example  :ok_hand:" name="foreground" id="foreground"></p>
     </fieldset>
       <input type="button" onclick="convertToTrash();" value="Convert to Trash">
+      </br>
+      <p class="error-message" id="errorMessage">ERROR: Please only use Numbers and English Letters!</p>
     </form>
   </br>
   </br>
