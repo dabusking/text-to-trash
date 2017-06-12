@@ -10,22 +10,25 @@
         }
     </script>
   </head>
-  <body>
-    <h1 id="title">Text 2 Trash<img align="center" src="texttotrashlogo.png" alt="Text To Trash Logo" height="100" width="100"></img></h1>
-    <form>
-      <fieldset>
-        <legend>Input your message and desired emojis</legend>
-          <p><label for="message">Message:</label> <input type="text" placeholder="Your Message Here" name="message" id="message" onchange="validateMessage(this.value, 'errorMessage');"></p>
-          <p><label for="background">Background:</label> <input type="text" placeholder="Example  :100:" name="background" id="background"></p>
-          <p><label for="foreground">Foreground:</label> <input type="text" placeholder="Example  :ok_hand:" name="foreground" id="foreground"></p>
-    </fieldset>
-      <input type="button" onclick="convertToTrash();" value="Convert to Trash">
-      </br>
+<body>
+  <div>
+      <h1 id="title">Text 2 Trash<img align="center" src="texttotrashlogo.png" alt="Text To Trash Logo" height="100" width="100"></img></h1>
+      <form>
+        <fieldset>
+          <legend>Input your message and desired emojis</legend>
+            <p><label for="message">Message:</label> <input type="text" placeholder="Your Message Here" name="message" id="message" onchange="validateMessage(this.value, 'errorMessage');"></p>
+            <p><label for="background">Background:</label> <input type="text" placeholder="Example  :100:" name="background" id="background"></p>
+            <p><label for="foreground">Foreground:</label> <input type="text" placeholder="Example  :ok_hand:" name="foreground" id="foreground"></p>
+      </fieldset>
+        <input type="button" onclick="convertToTrash();" value="Convert to Trash">
+        </br>
+
+      </form>
       <p class="error-message" id="errorMessage">ERROR: Please only use Numbers and English Letters!</p>
-    </form>
-  </br>
-  </br>
-  Result:</br> <textarea id="result" rows="20" cols="100"></textarea></br>
-  <button onclick="copyToClipBoard()" id="copyResultsBtn">Copy To Clipboard</button>
-  </body>
+    </br>
+    </br>
+    Result:</br> <textarea id="result" rows="20" cols="100"></textarea></br>
+    <button onclick="copyToClipBoard()" id="copyResultsBtn">Copy To Clipboard</button>
+  </div>
+</body>
 </html>
